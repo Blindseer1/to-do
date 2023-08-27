@@ -3,7 +3,7 @@ import checkMark from './checked.png';
 import { toggleCheck } from './markTask';
 
 
-const tasklist=document.getElementById('taskList');
+
 
 function closePop(task)
 {
@@ -46,7 +46,7 @@ function createCheck()
    svg.setAttribute('width',"25px")
    svg.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
     svg.setAttribute('viewbox',"0 0 24 24 ")
-
+    svg.classList.add('circle')
 
     const newPath=document.createElementNS('http://www.w3.org/2000/svg',"path");
     newPath.setAttribute('d',"M16.0303 10.0303C16.3232 9.73744 16.3232 9.26256 16.0303 8.96967C15.7374 8.67678 15.2626 8.67678 14.9697 8.96967L10.5 13.4393L9.03033 11.9697C8.73744 11.6768 8.26256 11.6768 7.96967 11.9697C7.67678 12.2626 7.67678 12.7374 7.96967 13.0303L9.96967 15.0303C10.2626 15.3232 10.7374 15.3232 11.0303 15.0303L16.0303 10.0303Z");
@@ -69,12 +69,19 @@ function createCheck()
 function createTitle(title)
 {
     let element=document.createElement('p');
+    console.log(title)
+    if(title=="")
+    element.textContent="Unnamed";
+    else
     element.textContent=title;
     return element;
 }
 function createDate(date)
 {
     let element=document.createElement('p');
+    if(date=="")
+    element.textContent="No time limit";
+    else
     element.textContent="Due "+date;
     return element;
 }
@@ -99,7 +106,8 @@ export function showOnPage(title,date,priority)
     task.appendChild(createDate(date))
     task.appendChild(createPriority(priority))
 
-    task.addEventListener('click',()=>toggleCheck(task));
+    let circles=task.querySelectorAll('.circle')
+   circles.forEach(circle=>circle.addEventListener('click',()=>toggleCheck(task))) 
     return task;
 }
 
@@ -162,12 +170,13 @@ export function showOnPage(title,date,priority)
 
     check.addEventListener('click',()=>
     {closePop(form)
-        console.log(titleInput.value)
+      
         let title=titleInput.value;
-        console.log(dueDateInput.value)
+       
         let dueDate=dueDateInput.value;
-        console.log(priorityInput.value)
+       
         let priority=priorityInput.value;
+        const tasklist=document.querySelector('#taskList.show');
       
         tasklist.appendChild(showOnPage(title,dueDate,priority))
     }
