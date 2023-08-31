@@ -12,7 +12,7 @@ function closePop(task)
 function createLabel(target,content)
 {
     const element=document.createElement('label')
-    element.htmlFor=`.${target}`;
+    element.htmlFor=`${target}`;
     element.textContent=content;
     return element;
 }
@@ -104,6 +104,14 @@ export function showOnPage(title,date,priority)
     task.appendChild(createCheck())
     task.appendChild(createTitle(title))
     task.appendChild(createDate(date))
+    if(priority==1 || priority==2)
+        task.classList.add('green');
+        else if(priority==4 || priority==5)
+        {
+            task.classList.add('red')
+        }
+        else
+        task.classList.add('yellow');
     task.appendChild(createPriority(priority))
 
     let circles=task.querySelectorAll('.circle')
@@ -120,29 +128,29 @@ export function showOnPage(title,date,priority)
    
     let titleInput=document.createElement('input');
     
-    titleInput.classList.add('titleInput')
-    form.appendChild(createLabel(titleInput,"Task Title"));
+    titleInput.setAttribute('id','titleInput')
+    form.appendChild(createLabel('titleInput',"Task Title"));
     form.appendChild(titleInput)
    
     let descriptionInput=document.createElement('textarea');
     
-    descriptionInput.classList.add('descriptionInput')
-    form.appendChild( createLabel(descriptionInput,'Description')) 
+    descriptionInput.setAttribute('id','descriptionInput')
+    form.appendChild( createLabel('descriptionInput','Description')) 
     form.appendChild(descriptionInput);
 
 
     let dueDate=document.createElement('label');
-    dueDate.htmlFor='.dueDateInput';
+    dueDate.htmlFor='dueDateInput';
     dueDate.textContent="Due date";
    
     let dueDateInput=document.createElement('input');
    dueDateInput.type="date";
-    dueDateInput.classList.add('dueDateInput')
+    dueDateInput.setAttribute('id','dueDateInput')
     form.appendChild(dueDate);
     form.appendChild(dueDateInput);
 
     let priority=document.createElement('label');
-    priority.htmlFor='.priorityInput';
+    priority.htmlFor='priorityInput';
     priority.textContent="Priority";
    
     let priorityInput=document.createElement('input');
@@ -151,7 +159,7 @@ export function showOnPage(title,date,priority)
     priorityInput.max=5;
     priorityInput.step=1;
     priorityInput.defaultValue=3;
-    priorityInput.classList.add('priorityInput')
+    priorityInput.setAttribute('id','priorityInput')
 
     form.appendChild(priority);
     form.appendChild(priorityInput);

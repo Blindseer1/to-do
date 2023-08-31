@@ -11,7 +11,7 @@
     <div class="header">
         <div>
             <button id="theme">Change theme</button>
-            <button class="addTask">Add task</button>
+           
             <button class="addProject">Add project</button>
         </div>
        
@@ -24,9 +24,12 @@
                 </ul>
 
             </div>
-            <div class="content">
+            <div class="cont">
+
+                <div class="content">
+
                 <ul id="taskList" data-tasklist-index="1" class="show">
-                    <li class="task">
+                    <li class="task show" data-task="1">
                         <?xml version="1.0" encoding="iso-8859-1"?>
 
 <svg fill="var(--fcolor)" height="20px" width="20px" version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -44,7 +47,13 @@
                        
                         <p>Default task</p>
                         <p>Due 2023-12-08</p>
-                        <p>5</p>
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="detailButton">
+                        <path d="M7 12.5C7.27614 12.5 7.5 12.2761 7.5 12C7.5 11.7239 7.27614 11.5 7 11.5C6.72386 11.5 6.5 11.7239 6.5 12C6.5 12.2761 6.72386 12.5 7 12.5Z" fill="var(--bord-color)" stroke="var(--bord-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 12.5C12.2761 12.5 12.5 12.2761 12.5 12C12.5 11.7239 12.2761 11.5 12 11.5C11.7239 11.5 11.5 11.7239 11.5 12C11.5 12.2761 11.7239 12.5 12 12.5Z" fill="var(--bord-color)" stroke="var(--bord-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M17 12.5C17.2761 12.5 17.5 12.2761 17.5 12C17.5 11.7239 17.2761 11.5 17 11.5C16.7239 11.5 16.5 11.7239 16.5 12C16.5 12.2761 16.7239 12.5 17 12.5Z" fill="var(--bord-color)" stroke="var(--bord-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--bord-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                         <?xml version="1.0" encoding="utf-8"?>
 
 
@@ -58,13 +67,41 @@
 
 </svg>
                     </li>
+                    <li class="details  dont-show " data-detail="1">
+                       
+                            <span>
+                                <p>Name:</p>
+                            <p>Default</p>
+                            </span>
+                            <span>
+                                <p>Due date:</p>
+                                <p>2023-12-18</p>
+                            </span>
+                            <span>
+                                <p>Priority:</p>
+                                <p>3</p>
+                            </span>
+                          
+                           
+                     <span id="descr">
+                        <p>Description:</p>
+                        <p>This is a default task</p>
+                     </span>
+                           
+                    </li>
                 </ul>
+              
 
                 <ul id="taskList" data-tasklist-index="2" class="dont-show" >
                     <li class="task">adasd</li>
                  </ul>
+                    
+                </div>
+
+               
+                 <button class="addTask">Add task</button>
+            
             </div>
-        </div>
     
    
 </body>

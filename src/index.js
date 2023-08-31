@@ -4,7 +4,7 @@ import { addTask } from './addTask';
 import { toggleCheck } from './markTask';
 import { switchProject } from './switchProjects';
 import { createFormProject } from './addProject';
-
+import { changeDisplay } from './addDetails';
 
 const changeTheme =document.querySelector('#theme');
 const body=document.querySelector('body');
@@ -30,11 +30,15 @@ taskButton.addEventListener('click',()=>
 })
 
 let tasklist=document.querySelector('#taskList')
-let task=tasklist.querySelector('li');
+let task=tasklist.querySelector('.task');
 let circles=document.querySelectorAll('.circle')
 
 circles.forEach(circle=>circle.addEventListener('click',()=>toggleCheck(task)))
 
+const detailButton=task.querySelector('#detailButton')
+
+detailButton.addEventListener('click',()=>changeDisplay(task,tasklist))
+console.log(detailButton)
 
 
 changeTheme.addEventListener('click',()=>
