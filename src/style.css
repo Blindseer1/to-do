@@ -1,8 +1,17 @@
 
 
+@font-face
+{
+    font-family: 'Mono';
+    src:url("./fonts/3270NerdFontPropo-Condensed.ttf");
+}
+
+
 *
 {
     margin: 0px;
+    font-family: 'Mono';
+    font-size: 25px;
 }
 .white-theme
 {
@@ -16,12 +25,12 @@
 }
 .black-theme
 {
-    --bg-color:#0b0814;
+    --bg-color:#101011;
     --bord-color:white;
     --fcolor:white ;
-    --sideColor:#2e080f;
-    --light-sideColor:#501822;
-    --hcolor:#650023;
+    --sideColor:#151a1a;
+    --light-sideColor:#1e1f27;
+    --hcolor:#030e28;
     --desc-color:#426dd6;
 }
 html
@@ -45,7 +54,7 @@ body
     display: grid;
     grid-template-rows: minmax(40px,50px) 2fr;
     grid-template-columns: 1fr;
-    row-gap: 3px;
+    row-gap: 0px;
     
 
 }
@@ -311,7 +320,11 @@ textarea:focus
 {
     grid-column: 1/4;
     align-self: center;
+  
 }
+
+/* fix description overflow */
+
 .show
 {
    
